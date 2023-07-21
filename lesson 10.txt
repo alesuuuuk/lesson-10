@@ -1,0 +1,127 @@
+import json
+#
+# def helloWorld():
+#     print("Hello world!")
+# def filterLetter(letter, data):
+#     filtered_arr = []
+#     for i in data:
+#         title = i["title"]
+#         if title[0].upper() == letter:
+#             filtered_arr.append(i)
+#
+#     return filtered_arr
+#
+#
+# if __name__ == "__main__":
+#     with open("products.json", "r", encoding="utf-8") as file:
+#         products = json.load(file)
+#
+#     print(filterLetter("F", products))
+#     print(filterLetter("K", products))
+#     print(filterLetter("A", products))
+
+
+
+# def hrywniaToDollar():
+#     dollar = 25
+#     hrywnia_kurs = int(input("Скільки ви маєте гривень?"))
+#     print(hrywnia_kurs/dollar)
+#
+# hrywniaToDollar()
+
+         # # i  - інтератор
+
+
+
+
+         # new_arr = []
+         # for i in products:
+         #     if len(i['title'])  != 0:
+         #         new_arr.append(i)
+         #
+         # with open("products.json", "w", encoding="utf-8") as f:
+         #    json.dump(new_arr, f)
+
+
+# def kwadrat_chysla(numbers):
+#     kwadrat_numbers = []
+#     for i in numbers:
+#         kwadrat_numbers.append(i**2)
+#     print(kwadrat_numbers)
+#
+#
+# if __name__ == "__main__":
+#     numbers = []
+#     while True:
+#         choice = input("dqwedc")
+#         if choice == "1":
+#             numbers.append(int(input("Введіть число")))
+#         elif choice == "2":
+#             kwadrat_chysla(numbers)
+#             break
+#         else:
+#             print("Введи ще траз дубуйобу")
+
+
+# def faktorial(number):
+#     faktorial_number = 1
+#     while number > 1:
+#         faktorial_number = faktorial_number*number
+#         number -= 1
+#
+#     print(faktorial_number)
+#
+# if __name__ == "__main__":
+#     number = int(input("Введіть число а я виведу вам його факторіал"))
+#     faktorial(number)
+
+
+# def isPolindrom(word):
+#     reverse_word = word[::-1]
+#     if reverse_word == word:
+#         return True
+#     else:
+#         return False
+#
+#
+# if __name__ == "__main__":
+#     value = input("Введи слово")
+#     print(isPolindrom(value))
+
+def cezarCode(txt, key=3):
+    with open("rome.json", "r") as file:
+        alphabet_data = json.load(file)
+    code_in_numbers = []
+    for letter in txt:
+        for l in alphabet_data:
+            if alphabet_data[f"{l}"] == letter.lower():
+                code_in_numbers.append(int(l) + int(key))
+
+    code_word = ''
+    for num in code_in_numbers:
+        if num <=26:
+            code_word = (alphabet_data[f"{num}"])
+        else:
+            code_word = (alphabet_data[f"{num-26}"])
+
+    return code_word.capitalize()
+
+if __name__ == "__main__":
+    enter_txt = "Python"
+    print(cezarCode(enter_txt))
+
+
+# def kilkist_sliv():
+#     while True:
+#         text = input("text")
+#         print(len(text.split()))
+#         a = input("dsd")
+#         if a == "1":
+#             break
+#         else:
+#             continue
+#
+# if __name__ == "__main__":
+#     kilkist_sliv()
+
+
